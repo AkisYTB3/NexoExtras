@@ -1,0 +1,5 @@
+name: NexoExtras
+version: '1.0.0'
+main: org.notionsmp.nexoExtras.NexoExtras
+api-version: '1.21'
+authors: [ Akis ]
