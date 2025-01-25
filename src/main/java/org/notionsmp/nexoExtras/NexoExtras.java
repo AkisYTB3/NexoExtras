@@ -5,7 +5,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.notionsmp.nexoExtras.classes.Mechanics;
 import org.notionsmp.nexoExtras.listeners.NexoItemsLoadedListener;
-import org.notionsmp.nexoExtras.listeners.PearlThrowListener;
 
 import java.io.File;
 import java.util.HashMap;
@@ -34,7 +33,6 @@ public final class NexoExtras extends JavaPlugin {
 
     private void registerListeners() {
         registerListener(new NexoItemsLoadedListener());
-        registerListener(new PearlThrowListener());
     }
 
     private void registerListener(Listener listener) {

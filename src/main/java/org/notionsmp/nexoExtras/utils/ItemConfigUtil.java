@@ -34,28 +34,7 @@ public class ItemConfigUtil {
 
                 Mechanics mechanic = NexoExtras.getInstance().getMechanics()
                         .computeIfAbsent(itemId, Mechanics::new);
-
-                loadPearlThrow(itemSection, mechanic);
             });
         }
     }
-
-    private static void loadPearlThrow(ConfigurationSection section, Mechanics mechanic) {
-        if (section.contains("Mechanics.pearl_throw")) {
-            boolean enabled = section.getBoolean("Mechanics.pearl_throw.enabled", false);
-            int cooldown = section.getInt("Mechanics.pearl_throw.cooldown", 0);
-            boolean consumeItem = section.getBoolean("Mechanics.pearl_throw.consume_item", false);
-            boolean takeDurability = section.getBoolean("Mechanics.pearl_throw.take_durability", false);
-            int durabilityReduction = section.getInt("Mechanics.pearl_throw.durability_reduction", 1);
-            double multiplier = section.getDouble("Mechanics.pearl_throw.multiplier", 1.5);
-
-            if (consumeItem && takeDurability) {
-                throw new IllegalArgumentException("pearl_throw cannot have both consume_item and take_durability enabled.");
-            }
-
-            mechanic.setPearlThrow(enabled, cooldown, consumeItem, takeDurability, durabilityReduction, multiplier);
-        }
-    }
-
-
 }
