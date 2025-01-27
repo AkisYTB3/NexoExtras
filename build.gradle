@@ -33,6 +33,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.36")
 }
 
+
 def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
